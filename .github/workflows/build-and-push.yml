@@ -13,7 +13,7 @@ permissions:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository_owner }}/my-image  # 你想要的镜像名（可改）
-  UPSTREAM_REPO: https://github.com/原作者/原仓库.git   # 改成真实 upstream
+  UPSTREAM_REPO: https://github.com/ZhuLinsen/daily_stock_analysis.git   # 改成真实 upstream
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -54,4 +54,5 @@ jobs:
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.event.inputs.release_tag }}
+
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
